@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #1a1a1a;  
+    color: #f0f0f0;  
+}
+
+table {
+    border-color: #f0f0f0;  
+}
+
+table tr, th {
+    border-color: #f0f0f0;
+}
+
+aside {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background: #8898a8;  
+    border-right: 3px solid #34495e;  
+}
+
+aside img {
+    float: left;
+    width: 800px;
+}
+
+aside ul {
+    padding-top: 2%;
+    list-style: none;
+}
+
+aside ul li {
+    display: block;
+    margin-top: 20px;
+    transition: all .6s ease;
+    padding: 8px;
+}
+
+aside ul li a {
+    color: #f0f0f0;  
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+aside h4 {
+    text-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #3498db, 0 0 20px #3498db;  
+    padding: 30px 0 0 20px;
+}
+
+aside ul li:hover, aside ul a:hover {
+    text-shadow: 0 0 10px #718693, 0 0 20px #3498db;
+    color: #3498db;  
+    transform: scale(1.05);
+}
+
+.title h1 {
+    font-size: 40px;
+    color: #3498db;  
+    margin-bottom: 50px;
+}
+
+header {
+    padding-bottom: 10px;
+    margin-bottom: auto;
+    background: #2c3e50;  
+}
+
+header h2 {
+    text-shadow: 0 0 10px #7c909d, 0 0 20px #7a8892;
+    color: #3498db;  
+    padding: 20px 3% 0 0;
+    text-align: right;
+}
+
+header img {
+    float: right;
+}
+
+.head_img {
+    color: #4d6778;  
+    float: left;
+    width: 30px;
+    height: auto;
+}
+
+footer {
+    font-weight: lighter;
+    text-align: center;
+    background: #2c3e50;  
+    padding: 10px;
+    margin-top: auto;
+    color: #f0f0f0;  
+}
+
+footer p {
+    padding-top: 15px;
+}
+
+.info_img {
+    border-radius: 20px;
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+    margin: 50px 10% 50px 10%;
+    width: 80%;
+}
+
+.page {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.main {
+    margin-left: 8%;
+    padding: 40px 70px 40px 20px;
+}
+
+.main a {
+    color: #3498db;  
+}
+
+.skill_list {
+    margin: 20px 0 20px 40px;
+}
+
+.skills_img {
+    border-radius: 20px;
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.home_img {
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+    margin: 0 0 30px 30px;
+    float: right;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.home_text {
+    float: left;
+}
+
+.text_block {
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+    padding: 4%;
+    margin: 2% 0 2% 0;
+    border-radius: 20px;
+}
+
+.menu-button {
+    background-color: transparent;
+    color: #f0f0f0;  
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+aside {
+    width: 200px;
+    background-color: #2c3e50;  
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 10px;
+    z-index: 999;
+    padding-top: 80px;
+}
+
+aside.visible {
+    transform: translateX(0);
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin: 20px 0;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #f0f0f0;  
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+aside ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        border-right: none;
+    }
+
+    .page {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    aside ul li a {
+        font-size: 18px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    aside {
+        width: 25%;
+    }
+
+    .main {
+        margin-left: 25%;
+    }
+}
+
+/* تأثير التلاشي والتكبير عند تحميل الصورة */
+img {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInImage 1s ease-out forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+img:hover {
+    transform: scale(1.1) rotate(10deg);  
+    transition: transform 0.5s ease; 
+}
+
+img:hover {
+    box-shadow: 0 0 15px #3498db, 0 0 30px #3498db;
+    transform: scale(1.1);  
+    transition: all 0.3s ease;
+}
