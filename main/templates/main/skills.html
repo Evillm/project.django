@@ -1,0 +1,37 @@
+{% extends 'main/mainpage.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div>
+        {{ skillspage.text|safe }}
+    </div>
+    <img class="skills_img" src="{{ skillspage.graph.url }}"/>
+</div>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТОП навыков по годам</title>
+    <style>
+        
+     </style>
+</head>
+<body>
+    <h1>ТОП навыков по годам</h1>
+
+    {% for year, skills in skills_by_year.items %}
+    <div class="year-container">
+        <div class="year-title">{{ year }}</div>
+        <ul class="skills-list">
+            {% for skill in skills %}
+            <li>{{ skill.skill_name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
+{% endblock %}

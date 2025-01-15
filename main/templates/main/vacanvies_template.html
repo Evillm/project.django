@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Последние вакансии</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .vacancy {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #007BFF;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .vacancy:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .vacancy h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .vacancy p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .vacancy .skills {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .vacancy .salary {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .vacancy .company {
+            color: #6c757d;
+        }
+        .vacancy .region {
+            color: #17a2b8;
+        }
+        .vacancy .published-date {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .vacancy .description {
+            margin-top: 10px;
+            color: #333;
+        }
+        .vacancy .description strong {
+            color: #007BFF;
+        }
+        .vacancy .description ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .vacancy .description li {
+            margin-bottom: 5px;
+        }
+        .vacancy .url {
+            margin-top: 10px;
+        }
+        .vacancy .url a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .vacancy .url a:hover {
+            text-decoration: underline;
+        }
+        .redirect-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .redirect-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .vacancy {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Последние вакансии</h1>
+        <p>Найдите свою следующую работу в IT</p>
+    </div>
+
+    <a href="https://hh.ru/search/vacancy?text=IT" class="redirect-button" target="_blank">Перейти на HH.ru</a>
+
+    {% for vacancy in vacancies %}
+    <div class="vacancy">
+        <h2>{{ vacancy.title }}</h2>
+        <p class="company"><strong>Компания:</strong> {{ vacancy.company }}</p>
+        <p class="salary"><strong>Оклад:</strong> {{ vacancy.salary }}</p>
+        <p class="region"><strong>Регион:</strong> {{ vacancy.region }}</p>
+        <p class="published-date"><strong>Дата публикации:</strong> {{ vacancy.published_date }}</p>
+        <p class="skills"><strong>Навыки:</strong> {{ vacancy.skills }}</p>
+        <div class="description">
+            <strong>Описание:</strong>
+            {{ vacancy.description|safe }}
+        </div>
+        <p class="url">
+            <a href="{{ vacancy.url }}" target="_blank">Перейти к вакансии на hh.ru</a>
+        </p>
+    </div>
+    {% endfor %}
+</body>
+</html>
